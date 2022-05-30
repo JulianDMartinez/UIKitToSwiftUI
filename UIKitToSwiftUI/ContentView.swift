@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var animate = true
+    
     var body: some View {
-        Text("Hello, world!")
+        VStack {
+            ActivityIndicator(animating: animate)
+            HStack {
+                Toggle(isOn: $animate) {
+                    Text("Toggle Animate")
+                }
+            }
             .padding()
+        }
     }
 }
 
